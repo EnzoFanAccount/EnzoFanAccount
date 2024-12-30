@@ -16,21 +16,31 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Fetch User Repositories
-      uses: actions/github-script@v6
       id: fetch_repos
+      uses: actions/github-script@v6
       with:
         script: |
-          const repos = await github.repos.listForAuthenticatedUser({ per_page: 100 });
+          const github = require('@actions/github');
+          const token = process.env.TOKEN;
+          const octokit = github.getOctokit(token);
+
+          const repos = await octokit.rest.repos.listForAuthenticatedUser({ per_page: 100 });
           const latestRepo = repos.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
           const mostStarredRepo = repos.data.sort((a, b) => b.stargazers_count - a.stargazers_count)[0];
-          return { latestRepo, mostStarredRepo };
+
+          core.setOutput('latestRepo', latestRepo.name);
+          core.setOutput('latestRepoUrl', latestRepo.html_url);
+          core.setOutput('mostStarredRepo', mostStarredRepo.name);
+          core.setOutput('mostStarredRepoUrl', mostStarredRepo.html_url);
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
 
     - name: Update README
       run: |
-        latest_repo_name=${{ steps.fetch_repos.outputs.latestRepo.name }}
-        latest_repo_url=${{ steps.fetch_repos.outputs.latestRepo.html_url }}
-        most_starred_repo_name=${{ steps.fetch_repos.outputs.mostStarredRepo.name }}
-        most_starred_repo_url=${{ steps.fetch_repos.outputs.mostStarredRepo.html_url }}
+        latest_repo_name=${{ steps.fetch_repos.outputs.latestRepo }}
+        latest_repo_url=${{ steps.fetch_repos.outputs.latestRepoUrl }}
+        most_starred_repo_name=${{ steps.fetch_repos.outputs.mostStarredRepo }}
+        most_starred_repo_url=${{ steps.fetch_repos.outputs.mostStarredRepoUrl }}
         echo "# EnzoFanAccount\n\n## Latest Repository\n\n[${latest_repo_name}](${latest_repo_url})\n\n## Most Successful Repository\n\n[${most_starred_repo_name}](${most_starred_repo_url})" > README.md
 
     - name: Commit and Push Changes
@@ -41,4 +51,4 @@ jobs:
         git commit -m 'Update README with latest and most successful repository'
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TOKEN: ${{ secrets.TOKEN }}
