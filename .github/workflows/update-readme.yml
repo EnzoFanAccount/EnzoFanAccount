@@ -1,0 +1,44 @@
+name: Update Profile README
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Fetch User Repositories
+      uses: actions/github-script@v6
+      id: fetch_repos
+      with:
+        script: |
+          const repos = await github.repos.listForAuthenticatedUser({ per_page: 100 });
+          const latestRepo = repos.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
+          const mostStarredRepo = repos.data.sort((a, b) => b.stargazers_count - a.stargazers_count)[0];
+          return { latestRepo, mostStarredRepo };
+
+    - name: Update README
+      run: |
+        latest_repo_name=${{ steps.fetch_repos.outputs.latestRepo.name }}
+        latest_repo_url=${{ steps.fetch_repos.outputs.latestRepo.html_url }}
+        most_starred_repo_name=${{ steps.fetch_repos.outputs.mostStarredRepo.name }}
+        most_starred_repo_url=${{ steps.fetch_repos.outputs.mostStarredRepo.html_url }}
+        echo "# EnzoFanAccount\n\n## Latest Repository\n\n[${latest_repo_name}](${latest_repo_url})\n\n## Most Successful Repository\n\n[${most_starred_repo_name}](${most_starred_repo_url})" > README.md
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m 'Update README with latest and most successful repository'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
