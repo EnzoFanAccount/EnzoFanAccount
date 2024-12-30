@@ -16,22 +16,15 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Fetch User Repositories
-      id: fetch_repos
       uses: actions/github-script@v6
+      id: fetch_repos
       with:
         script: |
-          const github = require('@actions/github');
-          const token = process.env.TOKEN;
-          const octokit = github.getOctokit(token);
-
+          const octokit = require('@actions/github').getOctokit(process.env.TOKEN);
           const repos = await octokit.rest.repos.listForAuthenticatedUser({ per_page: 100 });
           const latestRepo = repos.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))[0];
           const mostStarredRepo = repos.data.sort((a, b) => b.stargazers_count - a.stargazers_count)[0];
-
-          core.setOutput('latestRepo', latestRepo.name);
-          core.setOutput('latestRepoUrl', latestRepo.html_url);
-          core.setOutput('mostStarredRepo', mostStarredRepo.name);
-          core.setOutput('mostStarredRepoUrl', mostStarredRepo.html_url);
+          return { latestRepo, mostStarredRepo };
       env:
         TOKEN: ${{ secrets.TOKEN }}
 
