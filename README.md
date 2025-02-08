@@ -2,7 +2,7 @@
 
 **About Me**
 
-I'm an 18-year-old law student at PUCPR in Curitiba with a passion for the intersection of technology and law. While I'm currently immersed in the legal world, I'm also fascinated by the potential of AI, no-code tools, blockchain, and particularly how AI can be integrated into finance. I'm at the beginning of my coding journey, currently learning Python and having played around with Scratch. I'm excited to expand my technical skills and explore how these emerging technologies can revolutionize various industries, including the legal field.
+I'm an 18-year-old law student at PUCPR in Curitiba with a passion for the intersection of technology and law. While I'm currently immersed in the legal world, I'm also fascinated by the potential of AI, no-code tools, blockchain, and particularly how AI can be integrated into law. I'm at the beginning of my coding journey, currently learning Python and having played around with Scratch. I'm excited to expand my technical skills and explore how these emerging technologies can revolutionize various industries, including the legal field.
 
 **Skills**
 
@@ -16,7 +16,7 @@ My current focus is on exploring the following:
 *   **Artificial Intelligence:** I'm fascinated by the capabilities of AI and its potential to transform industries.
 *   **No-Code Tools:** I believe no-code platforms are democratizing software development and empowering more people to build solutions.
 *   **Blockchain:** I'm intrigued by the decentralized nature of blockchain and its implications for security and transparency.
-*   **AI in Finance:** I'm particularly interested in how AI can be used to improve financial systems, automate processes, and create new opportunities.
+*   **AI in Law:** I'm particularly interested in how AI can be used to improve legal systems, automate processes, and create new opportunities.
 
 **Projects**
 
