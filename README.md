@@ -20,7 +20,9 @@ My current focus is on exploring the following:
 
 **Projects**
 
-As I'm just starting out, I don't have any major projects to showcase yet. However, I'm actively learning and working on small projects to build my skills. Stay tuned for updates!
+##### [**SBOMbardier**](https://github.com/EnzoFanAccount/SBOMbardier)
+
+A community-driven, AI-powered tool to automate Software Bill of Materials (SBOM) validation, license compliance, and vulnerability detection for open-source dependencies.
 
 **How to Reach Me**
 
