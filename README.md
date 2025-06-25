@@ -7,12 +7,6 @@ Hey Enzo! To use this README:
 5. Customize the theme for GitHub stats if you like! (e.g., `dark`, `radical`, `merko`, `gruvbox`, `tokyonight`, `onedark`, `cobalt`, `synthwave`, `highcontrast`, `dracula`) - find more on anuraghazra's repo.
 6. Consider adding a profile banner image via GitHub's profile settings for extra visual appeal!
 -->
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Scimorph/Scimorph/main/.github/assets/scimorph_banner.png" alt="Scimorph Banner - Conceptual image blending code/circuits with legal scales/gavel" width="800"/> 
-  <!-- ^^^ SUGGESTION: Create a cool banner image and host it somewhere (like in a .github/assets folder in your Scimorph org or this profile repo) -->
-</p>
-
 <h1 align="center">Hi there, I'm Enzo 👋</h1>
 <h3 align="center">Bridging the gap between Law and Lines of Code ⚖️ <-> 💻</h3>
 
