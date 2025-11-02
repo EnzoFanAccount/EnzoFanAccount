@@ -89,6 +89,10 @@ I'm actively seeking **internship opportunities** where I can contribute my uniq
 *   **Internship Focus:** Compliance Engineering, DevSecOps, AI Governance, Private ML R&D, Technical Legal Consulting, and Software Engineering.
 *   **Open to:** Challenging projects, innovative teams, and roles where deep technical understanding and legal awareness are assets.
 
+I also write about the intersection of technology and law on my **[tech-law Medium blog](https://medium.com/@enzobiondo11_20702)**.
+
+Want to hire me to help your AI startup with legal-adjacent consultancy? See my **[profile on Upwork](https://www.upwork.com/freelancers/~0101b327adbc70e637)**.
+
 <p align="center">
   <strong>Hit me up if you think I'd be a good fit or if you just want to chat about tech and law!</strong>
   <br/><br/>
