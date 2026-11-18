@@ -99,9 +99,6 @@ Want to hire me to help your AI startup with legal-adjacent consultancy? See my 
   <a href="https://www.linkedin.com/in/enzo-paloschi-biondo" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn Profile"/>
   </a> 
-  <a href="mailto:enzobiondo11@outlook.com">
-    <img src="https://img.shields.io/badge/Email-Say%20Hello-red?style=for-the-badge&logo=gmail" alt="Email Me"/>
-  </a>
   <!-- Add Twitter or other relevant links if you have them -->
   <!-- <a href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank">
     <img src="https://img.shields.io/badge/Twitter-Follow-blue?style=for-the-badge&logo=twitter" alt="Twitter Profile"/>
