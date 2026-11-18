@@ -26,9 +26,6 @@ Hey Enzo! To use this README:
   <a href="https://www.linkedin.com/in/enzo-paloschi-biondo">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn Profile"/>
   </a>
-  <a href="mailto:enzobiondo11@outlook.com">
-    <img src="https://img.shields.io/badge/Email-Contact%20Me-red?style=for-the-badge&logo=gmail" alt="Email Me"/>
-  </a>
 </p>
 
 ---
